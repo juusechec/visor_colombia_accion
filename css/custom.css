@@ -1,0 +1,292 @@
+html, body, #map, #map_root {
+  height: initial;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden; /* Quitar si no sirve */
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.custom-navbar {
+  border-radius: 0;
+  margin: 0;
+}
+
+#custon-toolbar {
+  margin-top: 22px;
+  margin-right: 76px;
+}
+
+#custon-toolbar>ul>li>a {
+  color: #eee;
+}
+
+#custon-toolbar>ul>li>a .caret {
+  color: #eee;
+  border-top-color: #eee;
+  border-bottom-color: #eee;
+}
+
+#leftside {
+  background-color: #b7d26e;
+  padding: 0;
+  /* box-shadow: 0 0 0 5px #b7d26e; */
+  z-index: 2;
+}
+
+#rightside {
+  padding: 0px;
+}
+
+#leftside, #rightside {
+  overflow: hidden;
+}
+
+#containersides, #rightside, #leftside {
+  height: 100vh;
+  margin: 0 !important;
+}
+
+/*begin https://codepen.io/lmenus/pen/KrEqpG#0*/
+/*------------------*
+ * Global variables *
+ *------------------*/
+/*------------*
+ * CSS Styles *
+ *------------*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  color: #000;
+  font-family: 'Fira Sans', sans-serif;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.49, 0.23, 0.58, 0.49);
+  transition: -webkit-transform 0.6s cubic-bezier(0.49, 0.23, 0.58, 0.49);
+  transition: transform 0.6s cubic-bezier(0.49, 0.23, 0.58, 0.49);
+  transition: transform 0.6s cubic-bezier(0.49, 0.23, 0.58, 0.49), -webkit-transform 0.6s cubic-bezier(0.49, 0.23, 0.58, 0.49);
+}
+.card.flipped {
+  -webkit-transform: translateX(-100%) rotateY(-180deg);
+          transform: translateX(-100%) rotateY(-180deg);
+}
+.card .panel.panel-default {
+  color: #000;
+}
+.card-back {
+  overflow: auto;
+}
+
+.card-front,
+.card-back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  /* background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), transparent 1px, rgba(0, 0, 0, 0.3) 2px); */
+  background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.2), transparent 1px, rgba(0, 0, 0, 0.2) 5px);
+  background-size: 3px 3px;
+  background-color: #ffffff;
+  border-radius: 1px;
+  -webkit-box-shadow: 0px -6px 8px 0px rgba(0, 0, 0, 0.1), 0px 6px 8px 0px rgba(0, 0, 0, 0.1), 6px 0px 8px 0px rgba(0, 0, 0, 0.1), -6px 0px 8px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px -6px 8px 0px rgba(0, 0, 0, 0.1), 0px 6px 8px 0px rgba(0, 0, 0, 0.1), 6px 0px 8px 0px rgba(0, 0, 0, 0.1), -6px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  /* cursor: pointer; */
+  height: 100%;
+  left: 0;
+  padding: 5%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background: #ffffff;/* le quita la trama de repeating-linear-gradient */
+}
+.card-back .layer {
+  background: repeating-linear-gradient(135deg, rgba(76, 71, 31, 0.3), transparent 1px, rgba(76, 71, 31, 0.3) 2px);
+  background-size: 3px 3px;
+  background-color: #eee;
+  color: #302f34;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.card-back .layer:after {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), transparent);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.card-back .layer .top,
+.card-back .layer .bottom {
+  left: 8%;
+  position: absolute;
+  z-index: 1;
+}
+.card-back .layer .top {
+  top: 12%;
+}
+.card-back .layer .bottom {
+  bottom: 12%;
+}
+.card-back .layer h2, .card-back .layer h3, .card-back .layer h4 {
+  font-weight: 400;
+  margin: 2px 0;
+}
+.card-back .layer h2 {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.card-back .layer h3 {
+  font-size: 16px;
+}
+.card-back .layer h4 {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.card-front .layer {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 100%;
+}
+.card-front .layer h1 {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin: 0 auto;
+  padding: 6px 18px 4px;
+  text-align: center;
+}
+.card-front .layer .corner {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-right: 2px solid #eee;
+  border-top: 2px solid #eee;
+  height: 12px;
+  position: absolute;
+  width: 12px;
+}
+.card-front .layer .corner:nth-of-type(1) {
+  right: 0;
+  top: 0;
+}
+.card-front .layer .corner:nth-of-type(2) {
+  left: 0;
+  top: 0;
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+}
+.card-front .layer .corner:nth-of-type(3) {
+  bottom: 0;
+  left: 0;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+.card-front .layer .corner:nth-of-type(4) {
+  bottom: 0;
+  right: 0;
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+}
+
+.card-wrapper {
+  overflow: hidden;
+  height: 100%;
+  max-width: 100%;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+  position: relative;
+  width: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+/*end https://codepen.io/lmenus/pen/KrEqpG#0*/
+.custom-title {
+  margin-bottom: 41px;
+}
+
+.custom-pie {
+  width: 400px;
+  margin-left: calc(50% - 200px);
+}
+
+.custom-pie svg {
+  /* overflow: visible !important; */
+}
+
+.custom-bars {
+  height: 500px;
+  margin-left: calc(50% - 250px);
+}
+
+.custom-bars svg{
+  /* overflow: visible !important; */
+}
+
+.clickbox .dashboard {
+  color: black;
+}
+
+
+/**/
+.custom-chart {
+  min-height: 450px;
+}
+
+#resize {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #b7d26e;
+  width: 5px;
+  height: 100%;
+  cursor: col-resize;
+  background-image: url('images/vsizegrip.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.modal-header .close {
+    margin-top: -22px !important;
+}

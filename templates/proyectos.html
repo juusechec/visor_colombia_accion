@@ -1,0 +1,24 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  {{#proyectos}}
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading{{secuencia}}">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{secuencia}}"
+        {{#expanded}}aria-expanded="true"{{/expanded}}
+        {{^expanded}}class="collapsed" aria-expanded="false"{{/expanded}} aria-controls="collapse{{secuencia}}">
+          Proyecto: {{titulo}}
+        </a>
+      </h4>
+    </div>
+    <div id="collapse{{secuencia}}" class="panel-collapse collapse {{#expanded}}in{{/expanded}}" role="tabpanel" aria-labelledby="heading{{secuencia}}">
+      <div class="panel-body">
+        <ul class="list-group">
+          {{#campos}}
+          <li class="list-group-item"><b>{{name}}:</b> {{value}}</li>
+          {{/campos}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{/proyectos}}
+</div>

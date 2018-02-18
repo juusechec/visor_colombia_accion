@@ -1,0 +1,487 @@
+@charset "UTF-8";
+body {
+  font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+
+header {
+  height: 80px;
+}
+
+.navlist {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.navlist-item {
+  /*float: left;*/
+}
+
+.navlist-item a {
+  text-decoration: none;
+  display: block;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  color: blue;
+}
+
+.navlist-item a:hover {
+  color: black;
+}
+
+.container-fluid .navbar-header .navbar-brand {
+  margin-left: 10px;
+}
+
+#topFixedNavbar1 .nav.navbar-nav.navbar-right .dropdown {
+  margin-left: 30px;
+}
+
+#footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 50px;
+  width: 100%;
+  background: #0077af;
+  /*margin-top: 60px;*/
+  padding-left: 30px;
+  font-size: 11px;
+}
+
+#sidebar {
+  height: auto;
+  float: left;
+  margin-left: 2px;
+  width: 24%;
+  /*border-style: solid;
+	border: thin;
+	border-right-color: lightgray;
+	border-bottom-right-radius: 1px;
+	border-right-style: solid;
+
+    border-width: 1px;
+	margin-top: 5px;*/
+}
+
+#rightbar {
+  height: auto;
+  float: right;
+  margin-right: 2px;
+  width: 24%;
+}
+
+#content {
+  float: left;
+  width: 67%;
+  height: 100%;
+  min-height: 600px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  border: thin solid #DDDDDD;
+  border-radius: 4px;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+#botones_elementos {
+  width: 100%;
+  height: 100%;
+}
+
+#botones_seguridades {
+  width: 100%;
+  height: 100%;
+}
+
+#botones_lineamientos {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  position: relative;
+  min-height: 88px;
+  /*margin-bottom: 20px;*/
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-top: 1px solid;
+  border-bottom: 2px solid #0397D6;
+  background-color: #4AAA42;
+  z-index: 100;
+}
+
+.navbar-brand {
+  float: left;
+  padding: 1px 1px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.panel.panel-default .panel-heading .panel-title {
+  font-size: 13px;
+}
+
+.panel.panel-default #collapseOne1 .panel-body {
+  font-size: 11px;
+}
+
+.panel.panel-default #collapseTwo1 .panel-body {
+  font-size: 11px;
+}
+
+.panel.panel-default #collapseThree1 .panel-body {
+  font-size: 11px;
+}
+
+.panel.panel-default #collapseFour1 .panel-body {
+  font-size: 11px;
+}
+
+.navbar-header .navbar-brand img {}
+
+#topFixedNavbar1 .nav.navbar-nav.navbar-right .active {}
+
+#firma {
+  padding-top: 15px;
+  float: left;
+  width: 30%;
+  height: 48px;
+  color: #FFFFFF;
+}
+
+#apoyo {
+  padding-top: 15px;
+  font-size: 9px;
+  float: left;
+  width: 10%;
+  height: 48px;
+  color: #FFFFFF;
+}
+
+#Logos {
+  width: 60%;
+  float: right;
+  height: 48px;
+  padding: 0px;
+  margin-top: 0px;
+}
+
+.botones {
+  float: left;
+  list-style-type: none;
+  margin: 0px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.boton {
+  margin: 5px;
+  display: block;
+  float: left;
+  list-style-type: none;
+  width: 45%;
+  text-align: left;
+  text-decoration: none;
+  line-height: 12px;
+  border: 1px solid #C9C8C8;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 5px;
+  vertical-align: middle;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.boton a:hover {
+  text-decoration: none;
+  color: #49a942;
+}
+
+.icon {
+  float: left;
+  margin-right: 5px;
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  border-width: thin;
+  border-style: double;
+}
+
+#espacio {
+  width: 100%;
+  float: left;
+  margin-top: 60px;
+  height: 10px;
+}
+
+@media (max-width: 992px) {
+  #sidebar {
+    height: auto;
+    float: left;
+    margin-left: 10px;
+    min-width: 250px;
+    width: 20%;
+  }
+  #content {
+    float: left;
+    width: 60%;
+    height: 100%;
+    min-height: 600px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    border: thin solid #DDDDDD;
+    border-radius: 4px;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    height: auto;
+    float: left;
+    margin-left: 10px;
+    width: 20%;
+  }
+  #content {
+    float: left;
+    width: 60%;
+    height: 100%;
+    min-height: 600px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    border: thin solid #DDDDDD;
+    border-radius: 4px;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  #sidebar {
+    height: auto;
+    float: left;
+    margin-left: 10px;
+    margin-right: 30px;
+    width: 95%;
+  }
+  #content {
+    float: left;
+    width: 94%;
+    height: 100%;
+    margin-left: 15px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    border: thin solid #DDDDDD;
+    border-radius: 4px;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+  #topFixedNavbar1 .nav.navbar-nav.navbar-right .navlist-item {
+    padding-left: 15px;
+  }
+  #topFixedNavbar1 .nav.navbar-nav.navbar-right .active {
+    padding-left: 15px;
+  }
+  #footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 70px;
+    width: 100%;
+    background: #0077af;
+    /*margin-top: 10px;*/
+    padding-left: 30px;
+    font-size: 11px;
+  }
+  #espacio {
+    width: 100%;
+    float: left;
+    margin-top: 80px;
+    height: 10px;
+  }
+  #firma {
+    padding-top: 5px;
+    float: left;
+    width: 100%;
+    height: 25%;
+    color: #FFFFFF;
+  }
+  #apoyo {
+    padding-top: 5px;
+    font-size: 9px;
+    float: left;
+    width: 30%;
+    height: 70%;
+    color: #FFFFFF;
+  }
+  #Logos {
+    width: 60%;
+    float: right;
+    height: 70%;
+    padding: 0px;
+    margin-bottom: 10px;
+  }
+}
+
+.dojoxFloatingPaneContent {
+  display: grid;
+  margin: 15px 0px 0px 10px;
+  color: #000000;
+}
+
+.dojoxFloatingPaneCanvas {
+  left: 0px !important;
+  top: 0px !important;
+  width: auto !important;
+  height: auto !important;
+  /*overflow:auto;*/
+}
+
+.dojoxFloatingCloseIcon {
+  display: block;
+  visibility: visible;
+  right: 3px;
+  width: 10px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.dojoxFloatingMinimizeIcon {
+  display: block;
+  visibility: visible;
+  right: 3px;
+  width: 10px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.dojoxFloatingPaneTitle {
+  background-color: #0077af !important;
+  height: 30px;
+  cursor: move;
+}
+
+.dojoxFloatingPaneClass {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 620px;
+  height: 520px;
+  visibility: visible;
+  background-color: #FFFFFF;
+  opacity: 1;
+}
+
+.goog-combobox .goog-menu {
+  margin-top: -1px !important;
+  width: auto !important;
+  z-index: 1000 !important;
+  height: 300px !important;
+  overflow: scroll !important;
+}
+
+.goog-menu {
+  background: #fff;
+  border-color: #ccc #666 #666 #ccc;
+  border-style: solid;
+  border-width: 1px;
+  cursor: default;
+  font: normal 10px Arial, sans-serif;
+  margin: 0;
+  outline: none;
+  padding: 4px 0;
+  position: absolute;
+  z-index: 20000;
+}
+
+.goog-menuitem-content {
+  color: #000;
+  font: normal 11px Arial, sans-serif !important;
+}
+
+.google-visualization-controls-categoryfilter li.goog-inline-block {
+  margin: 0.2em;
+  display: none;
+}
+
+.google-visualization-table {
+  position: relative;
+  z-index: 0;
+  max-width: 400px;
+  max-height: 400px;
+  width: 500px;
+  height: 400px;
+}
+
+.customTableClassName {
+  max-width: 400px;
+  max-height: 400px;
+  width: 400px;
+  height: 400px;
+}
+
+.google-visualization-table-table {
+  font-family: arial, helvetica;
+  font-size: 8pt !important;
+  cursor: default;
+  margin: 0;
+  background: white;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+#areatrabajo {
+  background-image: url(/Content/images/i_JMARTIN.png);
+  width: 220px;
+  height: 220px;
+  z-index: 1;
+  position: absolute;
+}
+
+.label-image {
+  position: absolute;
+  /*z-index: 10;*/
+  /* left: 20px; */
+  /* top: 50px; */
+  margin: -140px 25px;
+  color: #FFF;
+  font-size: 1.6em;
+  text-align: center;
+  width: 150px;
+  /*height: 70px;*/
+  background-color: #494C52;
+  opacity: 0.8;
+  font-weight: lighter;
+}
+
+.image-overlay {
+  position: relative;
+  /*max-width:200px;*/
+}
+
+.label-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #494C52;
+  opacity: 0.8;
+  font-weight: bolder;
+  color: #FFF;
+  width: calc(100% - 10px);
+  text-align: center;
+  font-stretch: normal;
+  /*font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+}

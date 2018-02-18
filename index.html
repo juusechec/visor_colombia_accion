@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/estilo.css" rel="stylesheet" type="text/css">
+  <link href="https://js.arcgis.com/3.22/esri/css/esri.css" rel="stylesheet" type="text/css">
+  <link href="https://js.arcgis.com/3.22/esri/themes/calcite/esri/esri.css" rel="stylesheet" type="text/css">
+  <link href="css/custom.css" rel="stylesheet" type="text/css">
+  <title>NOCICOA</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div id="containersides" class="row">
+      <div id="leftside" class="col-xs-12 col-sm-6 col-md-6">
+        <div class='card-wrapper'>
+          <div class='card' data-toggle-class='flipped'>
+            <div class='card-front'>
+              <div class="row">
+                <div class="col-xs-4">
+                  <img class="img-responsive" src="css/images/i_logo.png" style="height:140px;" />
+                </div>
+                <div class="col-xs-8">
+                  <p style="font-size: 2em;">Colombia en Acción (NOCICOA)</p>
+                </div>
+              </div>
+              <hr style="display:block; border-style:solid; width:100%" />
+              <div id="principalPanel">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <a href="#">
+                      <div class="image-overlay" data-clickbox-opt="area_de_trabajo" onclick="setTimeout(graphs.loadAreasTrabajoGraphs, 1000);">
+                        <img src="css/images/i_MANGA.png" class="img-responsive" />
+                        <div class="label-overlay">Áreas de trabajo</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xs-4">
+                    <a href="#">
+                      <div class="image-overlay" data-clickbox-opt="estrategias" onclick="setTimeout(graphs.loadAreasTrabajoGraphs, 1000);">
+                        <img src="css/images/i_LUISALEJANDRO.png" class="img-responsive" />
+                        <div class="label-overlay">Estrategias</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xs-4">
+                    <a href="#">
+                      <div class="image-overlay" data-clickbox-opt="socios">
+                        <img src="css/images/i_Buenos Aires.png" class="img-responsive" / onclick="setTimeout(graphs.loadAreasTrabajoGraphs, 1000);">
+                        <div class="label-overlay">Socios</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="row" style="padding-top:20px">
+                  <div class="col-xs-4">
+                    <a href="#">
+                      <div class="image-overlay" data-clickbox-opt="programas" onclick="setTimeout(graphs.loadAreasTrabajoGraphs, 1000);">
+                        <img src="css/images/i_Localidad Cecilia.png" class="img-responsive" />
+                        <div class="label-overlay">Programas</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xs-4">
+                    <a href="#">
+                      <div class="image-overlay" data-clickbox-opt="criterios_de_gestion" onclick="setTimeout(graphs.loadAreasTrabajoGraphs, 1000);">
+                        <img src="css/images/i_JMARTIN.png" class="img-responsive" />
+                        <div class="label-overlay">Criterios de Gestión</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xs-4">
+                    <a href="#">
+                      <div class="image-overlay" data-clickbox-opt="proyectos" onclick="setTimeout(graphs.loadAreasTrabajoGraphs, 1000);">
+                        <img src="css/images/i_JULIANSOTELO.png" class="img-responsive" />
+                        <div class="label-overlay">Proyectos</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='card-back'>
+              <div id="area_de_trabajo" class="clickbox" style="display: none;">
+                <button type="button" class="btn btn-primary clickbox-return btn-block">Atrás</button>
+                <div class="panel panel-default">
+                  <div class="panel-body" id="dashboard_div_parent">
+                    <div id="dashboard_div_areastrabajo" class="row">
+                      <h3 class="custom-title text-center">Resumen por Localización</h3>
+                      <div id="initialfilter_div_areastrabajo" class="col-xs-12"></div>
+                      <div id="finalfilter_div_areastrabajo" class="col-xs-12"></div>
+                      <div id="categoryfilter_div_areastrabajo" class="col-xs-12"></div>
+                      <div id="barchart_div_areastrabajo" class="col-xs-12 custom-chart" style="height: 1000px;"></div>
+                      <div id="table_div_areastrabajo" class="col-xs-12 custom-chart"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="estrategias" class="clickbox" style="display: none;">
+                <button type="button" class="btn btn-primary clickbox-return btn-block">Atrás</button>
+                <div class="panel panel-default">
+                  <div class="panel-body" id="estrategias_dashboard_div_parent">
+                    <div id="estrategias_dashboard_div" style="display:grid">
+                      <h3 class="custom-title text-center">Resumen por Estrategias</h3>
+                      <div id="e_chart_div" class="custom-pie"></div>
+                      <p style="position: relative; top: 71px; z-index: 100;">Los números en las barras son números de proyectos.</p>
+                      <div id="e_columnchart_div" class="custom-bars"></div>
+                      <div id="filterTable">
+                        <div id="e_filter_div"></div>
+                        <div id="e_table_div" style="max-width:500px; max-height:400px !important; height:400px !important; font-size:10px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="socios" class="clickbox" style="display: none;">
+                <button type="button" class="btn btn-primary clickbox-return btn-block">Atrás</button>
+                <div class="panel panel-default">
+                  <div class="panel-body" id="estrategias_dashboard_div_parent">
+                    <div id="estrategias_dashboard_div" style="display:grid">
+                      <h3 class="custom-title text-center">Resumen por Socios</h3>
+                      <!--Div that will hold the dashboard-->
+                      <div id="dashboard1_div_socios" class="dashboard">
+                        <div id="filter_div_socios"></div>
+                        <div id="hidden_div_socios"></div>
+                        <div id="chart_div_socios"></div>
+                        <div id="barchart_div_socios"></div>
+                      </div>
+                      <br><br>
+                      <div id="dashboard2_div_socios" class="dashboard">
+                        <div id="filter_string_div_socios"></div>
+                        <div id="table_div_socios"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="programas" class="clickbox" style="display: none;">
+                <button type="button" class="btn btn-primary clickbox-return btn-block">Atrás</button>
+                <div class="panel panel-default">
+                  <div class="panel-body" id="programas_dashboard_div_parent">
+                    <div id="programas_dashboard_div" style="display:grid">
+                      <h3 class="custom-title text-center">Resumen por Programas</h3>
+                      <div id="p_chart_div" class="custom-pie"></div>
+                      <div id="p_columnchart_div" class="custom-bars"></div>
+                      <div id="filterTable">
+                        <div id="p_filter_div"></div>
+                        <div id="p_table_div" style="max-width:500px; max-height:400px !important; height:400px !important; font-size:10px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="criterios_de_gestion" class="clickbox" style="display: none;">
+                <button type="button" class="btn btn-primary clickbox-return btn-block">Atrás</button>
+                <div class="panel panel-default">
+                  <div class="panel-body" id="cg_dashboard_div_parent">
+                    <div id="cg_dashboard_div" style="display:grid">
+                      <h3 class="custom-title text-center">Resumen por Criterios de Gestión</h3>
+                      <div id="cg_chart_div" class="custom-pie"></div>
+                      <div id="cg_columnchart_div" class="custom-bars"></div>
+                      <div id="filterTable">
+                        <div id="cg_filter_div"></div>
+                        <div id="cg_table_div" style="max-width:500px; max-height:400px !important; height:400px !important; font-size:10px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="proyectos" class="clickbox" style="display: none;">
+                <button type="button" class="btn btn-primary clickbox-return btn-block">Atrás</button>
+                <div class="panel panel-default">
+                  <div class="panel-body" id="estrategias_dashboard_div_parent">
+                    <div id="estrategias_dashboard_div" style="display:grid">
+                      <h3 class="custom-title text-center">Resumen por Proyectos</h3>
+                      <div id="gaugechart_div_proyectos"></div>
+                      <br>
+                      <div id="dashboard1_div_proyectos" class="dashboard">
+                        <div id="filter_div_proyectos"></div>
+                        <div id="hidden_div_proyectos"></div>
+                        <div id="chart_div_proyectos"></div>
+                        <div id="barchart_div_proyectos"></div>
+                        <p>Estado (0 - ejecutado(cerrado), 1 - en ejecución(activo), 2 - pendiente)</p>
+                      </div>
+                      <br><br>
+                      <div id="dashboard2_div_proyectos" class="dashboard">
+                        <div id="filter_string_div_proyectos"></div>
+                        <div id="table_div_proyectos"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="resize"></div>
+      </div>
+      <div id="rightside" class="col-xs-12 col-sm-6 col-md-6">
+        <nav class="navbar navbar-default custom-navbar" style="display:none;">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+              </div>
+              <div class="collapse navbar-collapse navlist" id="custon-toolbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="navlist-item" id="CG_menu" title="Identificar Elemento en el mapa"><a href="#" style="background-image:url(css/images/Informacion.png); width:60px; height:41px; padding-left:5px; background-repeat:no-repeat"></a><span class="sr-only"></span></li>
+                  <li class="navlist-item" id="CG_menu" title="Identificar Elemento en el mapa"><a href="#" style="background-image:url(css/images/Medir.png); width:60px; height:41px; padding-left:5px; background-repeat:no-repeat"></a><span class="sr-only"></span></li>
+                  <li class="navlist-item" id="CG_menu" title="Identificar Elemento en el mapa"><a href="#" style="background-image:url(css/images/Imprimir.png); width:60px; height:41px; padding-left:5px; background-repeat:no-repeat"></a><span class="sr-only"></span></li>
+                  <li class="navlist-item" id="CG_menu" title="Identificar Elemento en el mapa"><a href="#" style="background-image:url(css/images/Navegacion.png); width:60px; height:41px; padding-left:5px; background-repeat:no-repeat"></a><span class="sr-only"></span></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ayuda<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Información</a></li>
+                      <li><a href="#">Guía</a></li>
+                      <li><a href="#">Versión</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Acerca de Geothinking</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+          </nav>
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="proyectosModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Lista de Proyectos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="setTimeout(leftPane.resizeMap, 500);">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="proyectosModalBody">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="setTimeout(leftPane.resizeMap, 500);">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://js.arcgis.com/3.22/" type="text/javascript"></script>
+  <script src="http://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/respond.min.js" type="text/javascript"></script>
+  <script src="js/leftPane.js" type="text/javascript"></script>
+  <script src="js/graphs.js" type="text/javascript"></script>
+  <script src="js/geothinking.js" type="text/javascript"></script>
+  <script src="js/mustache.min.js" type="text/javascript" async></script>
+</body>
+
+</html>
